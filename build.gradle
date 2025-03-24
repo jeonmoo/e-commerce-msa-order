@@ -71,6 +71,12 @@ dependencies {
 	// Mysql Driver
 	runtimeOnly 'com.mysql:mysql-connector-j'
 
+	// OpenFeign
+	implementation 'io.github.openfeign:feign-core:13.0'
+	implementation 'io.github.openfeign:feign-jackson:13.0'
+	implementation 'io.github.openfeign:feign-okhttp:13.0'
+	implementation 'io.github.openfeign.form:feign-form:3.8.0'
+
 	// Lombok
 	annotationProcessor 'org.projectlombok:lombok'
 
