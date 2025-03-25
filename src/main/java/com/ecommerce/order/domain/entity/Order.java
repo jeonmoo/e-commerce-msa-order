@@ -1,6 +1,6 @@
-package com.ecommerce.order.domain.order.entity;
+package com.ecommerce.order.domain.entity;
 
-import com.ecommerce.order.domain.order.enums.OrderStatus;
+import com.ecommerce.order.domain.enums.OrderStatus;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
@@ -62,12 +62,12 @@ public class Order {
     private LocalDateTime updatedAt;
 
     @Builder
-    public Order(Long userId, List<OrderItem> orderItems, OrderStatus orderStatus,
+    public Order(Long userId, List<OrderItem> orderItems,
                  String address, BigDecimal totalFinalPrice, BigDecimal totalOriginPrice,
                  BigDecimal totalDiscountPrice, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.userId = userId;
         this.orderItems = orderItems;
-        this.orderStatus = orderStatus;
+        this.orderStatus = OrderStatus.PENDING;
         this.address = address;
         this.totalFinalPrice = totalFinalPrice;
         this.totalOriginPrice = totalOriginPrice;

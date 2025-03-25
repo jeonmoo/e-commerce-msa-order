@@ -1,6 +1,6 @@
-package com.ecommerce.order.domain.order.entity;
+package com.ecommerce.order.domain.entity;
 
-import com.ecommerce.order.domain.order.enums.OrderStatus;
+import com.ecommerce.order.domain.enums.OrderStatus;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;

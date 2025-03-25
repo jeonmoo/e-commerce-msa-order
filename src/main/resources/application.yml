@@ -5,14 +5,16 @@ spring:
   application:
     name: order
 
+  config:
+    import: "optional:configserver:"
+    name: order             # ??? ?? ?? ??
+  #    profile: default     # profile ? (optional)
   cloud:
     gateway:
       routes: [ ]
 
-  config:
-    import: "optional:configserver:"
-    name: order             # ??? ?? ?? ??
-  #    profile: default              # profile ? (???? ??)
+  kafka:
+    bootstrap-servers: localhost:9092
 
   datasource:
     url: jdbc:mysql://localhost:3306/ecommerce_order
