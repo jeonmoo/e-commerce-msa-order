@@ -22,9 +22,14 @@ public class OrderService {
     private final OrderRepository orderRepository;
 
 
-    private Order findOrder(Long orderId) {
-        return orderRepository.findById(orderId)
+    private Order findOrder(Long id) {
+        return orderRepository.findById(id)
                 .orElseThrow(() -> new GlobalException(OrderExceptionCode.NOT_FOUND_ORDER));
+    }
+
+    public OrderResponse getOrder(Long id) {
+        Order order = findOrder(id);
+        return  orderProcessService.toResponse(order);
     }
 
     @Transactional

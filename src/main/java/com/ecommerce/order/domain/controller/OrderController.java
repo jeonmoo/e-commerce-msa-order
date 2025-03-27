@@ -15,6 +15,13 @@ import org.springframework.web.bind.annotation.*;
 public class OrderController {
 
     private final OrderService orderService;
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ApiResponse<OrderResponse>> getOrder(@PathVariable Long id) {
+        OrderResponse response = orderService.getOrder(id);
+        return ApiResponse.success(response);
+    }
+
     @PostMapping
     public ResponseEntity<ApiResponse<OrderResponse>> registerOrder(@Valid @RequestBody OrderRequest request) {
         OrderResponse response = orderService.registerOrder(request);
