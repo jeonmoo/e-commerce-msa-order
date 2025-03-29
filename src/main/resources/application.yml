@@ -36,3 +36,8 @@ spring:
       level:
         org.hibernate.SQL: debug                   # Hibernate SQL ??
         org.hibernate.type.descriptor.sql.BasicBinder: trace # Hibernate ??? ??
+
+external:
+  msa:
+    product:
+      url: localhost:8081/product
